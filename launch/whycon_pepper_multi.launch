@@ -1,0 +1,22 @@
+<launch>
+  <group ns="camera">
+    <node pkg="image_proc" type="image_proc" name="image_proc"/>
+  </group>
+
+   <node name="whycon" type="whycon" pkg="whycon"  output="screen">
+    <param name="targets" value="4"/> 
+    <param name="max_refine" value="5"/>
+    <param name="max_attempts" value="5"/>
+    <param name="outer_diameter" value="0.0115"/>
+    <param name="inner_diameter" value="0.005"/>
+    <param name="camera_link_name" value="CameraBottom_optical_frame"/>
+
+    <!-- uncomment when already performed 3D->2D calibration -->
+    <!-- 
+      <param name="xscale" value="1"/>
+      <param name="yscale" value="1"/>
+      <param name="axis" value="axis/>
+    --> 
+  </node>
+</launch>
+  
