@@ -8,7 +8,7 @@
   <!--Homogeneous Matrix-->
   <homogeneous_transformation>
     <!--Name of the homogeneous matrix-->
-    <name>eMh_rightArm_Pepper</name>
+    <name>eMh_RArm</name>
     <values>
       <!--Translation vector with values in meters-->
       <tx>0.009978</tx>
