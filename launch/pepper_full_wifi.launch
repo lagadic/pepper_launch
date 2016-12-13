@@ -1,6 +1,6 @@
 <launch>
 
-  <arg name="nao_ip"              default="$(optenv PEPPER_IP 127.0.0.1)" />
+  <arg name="nao_ip"              default="$(optenv PEPPER_IP_WIFI 127.0.0.1)" />
   <arg name="nao_port"            default="$(optenv NAO_PORT 9559)" />
 
   <arg name="roscore_ip"          default="131.254.13.112" />
