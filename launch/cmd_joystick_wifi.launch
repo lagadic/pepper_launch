@@ -1,0 +1,33 @@
+<launch>
+
+  <arg name="nao_ip"              default="$(optenv PEPPER_IP_WIFI 127.0.0.1)" />
+  <arg name="nao_port"            default="$(optenv NAO_PORT 9559)" />
+
+  <arg name="roscore_ip"          default="131.254.13.112" />
+  <arg name="network_interface"   default="em1" />
+
+  <arg name="namespace"           default="pepper_robot" />
+
+
+  <!-- joystick -->
+  <rosparam file="$(find pepper_launch)/config/logitech_controller.yaml" command="load" ns="teleop_nao_joy" />
+  <node pkg="nao_teleop" type="teleop_nao_joy" name="teleop_nao_joy" output="screen" />
+  <node pkg="joy" type="joy_node" name="joy_node" />
+  
+
+  <!-- naoqi driver -->
+  <include file="$(find naoqi_driver)/launch/naoqi_driver.launch"  ns="$(arg namespace)" >
+    <arg name="nao_ip"            value="$(arg nao_ip)" />
+    <arg name="nao_port"          value="$(arg nao_port)" />
+    <arg name="roscore_ip"        value="$(arg roscore_ip)" />
+    <arg name="network_interface" value="$(arg network_interface)" />
+  </include>
+
+  <!-- launch pose manager -->
+  <include file="$(find naoqi_pose)/launch/pose_manager.launch" ns="$(arg namespace)/pose" >
+    <arg name="nao_ip"            value="$(arg nao_ip)" />
+    <arg name="nao_port"          value="$(arg nao_port)" />
+  </include>
+
+
+</launch>

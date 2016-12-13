@@ -1,0 +1,25 @@
+axis_x: 1
+axis_y: 0
+axis_turn: 3
+btn_crouch: 0
+btn_enable_control: 7
+btn_head_mod: 4
+btn_start_scan: 13
+btn_stop_scan: 12
+btn_init_pose: 6
+
+
+# Axis
+
+# 1 left stick x
+# 0 left stick y
+# 3 right stick x
+
+# Buttons 
+
+# 7 START
+# 4 LB 
+
+# Not working for Pepper (to test): btn_start_scan, btn_stop_scan, btn_init_pose, btn_crouch
+
+
