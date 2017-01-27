@@ -36,7 +36,7 @@
 
     -->
   <node pkg="nodelet" type="nodelet" name="visp_tracker_client"
-        args="load visp_tracker/TrackerClient $(arg manager)">
+        args="load visp_tracker/TrackerClient $(arg manager)" output="screen">
     <param name="model_path" value="package://visp_tracker/models" />
     <param name="model_name" value="tabascobox_green" />
     <param name="tracker_type" value="mbt+klt" />
