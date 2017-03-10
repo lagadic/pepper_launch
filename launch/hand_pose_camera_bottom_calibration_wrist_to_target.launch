@@ -1,7 +1,7 @@
 <launch>
   <env name="PYTHONPATH" value="$(env PYTHONPATH)" />
 
-  <arg name="nao_ip" default="$(optenv PEPPER_IP_WIFI 131.254.10.126)" />
+  <arg name="nao_ip" default="$(optenv PEPPER_IP 131.254.10.126)" />
   <arg name="nao_port" default="$(optenv NAO_PORT 9559)" />
 
   <arg name="ns" default="" /> <!-- front camera -->
@@ -39,6 +39,8 @@
 <!-- Launch node to estimate the right hand pose -->
 <node name="pepper_hand_pose" pkg="pepper_hand_pose" type="pepper_hand_pose_node" output="screen">
   <param name="numPoints" value="4" />
+  <param name="robotIp" value="$(optenv PEPPER_IP 131.254.10.126)" />
+  <param name="targetCalibration" value="True" />
 </node>
 
 </launch>

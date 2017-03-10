@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<root>
+  <!--This file stores homogeneous matrix used
+   in the vpHomogeneousMatrix Class of ViSP available
+   at http://www.irisa.fr/lagadic/visp/visp.html .
+   It can be read with the parse method of
+   the vpXmlParserHomogeneousMatrix class.-->
+
+
+  <!--Homogeneous Matrix-->
+  <homogeneous_transformation>
+    <!--Name of the homogeneous matrix-->
+    <name>dhMoffset_RArm</name>
+    <values>
+      <!--Translation vector with values in meters-->
+      <tx>0.010104</tx>
+      <ty>0.113865</ty>
+      <tz>-0.043400</tz>
+      <!--Rotational vector expressed in angle axis representation with values in radians-->
+      <theta_ux>1.065487</theta_ux>
+      <theta_uy>-1.226703</theta_uy>
+      <theta_uz>-1.157553</theta_uz>
+    </values>
+  </homogeneous_transformation>
+  <!--Homogeneous Matrix-->
+  <homogeneous_transformation>
+    <!--Name of the homogeneous matrix-->
+    <name>dhMoffset_RArm_FEB</name>
+    <values>
+      <!--Translation vector with values in meters-->
+      <tx>0.017432</tx>
+      <ty>0.118367</ty>
+      <tz>-0.046258</tz>
+      <!--Rotational vector expressed in angle axis representation with values in radians-->
+      <theta_ux>1.017637</theta_ux>
+      <theta_uy>-1.186057</theta_uy>
+      <theta_uz>-1.427027</theta_uz>
+    </values>
+  </homogeneous_transformation>
+  <!--Homogeneous Matrix-->
+  <homogeneous_transformation>
+    <!--Name of the homogeneous matrix-->
+    <name>dhMoffset_RArm_OLD</name>
+    <values>
+      <!--Translation vector with values in meters-->
+      <tx>-0.013088</tx>
+      <ty>0.125751</ty>
+      <tz>-0.041618</tz>
+      <!--Rotational vector expressed in angle axis representation with values in radians-->
+      <theta_ux>0.988460</theta_ux>
+      <theta_uy>-1.441884</theta_uy>
+      <theta_uz>-1.161082</theta_uz>
+    </values>
+  </homogeneous_transformation>
+  <!--Homogeneous Matrix-->
+  <homogeneous_transformation>
+    <!--Name of the homogeneous matrix-->
+    <name>cMdbox</name>
+    <values>
+      <!--Translation vector with values in meters-->
+      <tx>0.120720</tx>
+      <ty>-0.041218</ty>
+      <tz>0.393467</tz>
+      <!--Rotational vector expressed in angle axis representation with values in radians-->
+      <theta_ux>0.511785</theta_ux>
+      <theta_uy>2.374081</theta_uy>
+      <theta_uz>-1.515934</theta_uz>
+    </values>
+  </homogeneous_transformation>
+</root>

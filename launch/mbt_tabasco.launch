@@ -13,7 +13,7 @@
   <arg name="manager" value="visp_nodelet_manager" />
 
   <!-- nodelet manager process -->
-  <node pkg="nodelet" type="nodelet" name="$(arg manager)" args="manager" />
+  <node pkg="nodelet" type="nodelet" name="$(arg manager)" args="manager" output="screen" />
 
   <!-- Launch the tracking node -->
   <node pkg="nodelet" type="nodelet" name="tracker"
@@ -43,7 +43,7 @@
     <!-- Load recommended settings for tracking initialization. They
       will be automatically forwarded to the tracking node if the
       initialization succeed. -->
-    <rosparam file="$(find pepper_launch)/data/objects/tabascobox_green/tracker.yaml" />
+    <rosparam file="$(find visp_tracker)/models/tabascobox_green/tracker.yaml" />
   </node> 
 
   <!-- Launch the viewer (GUI)
@@ -55,6 +55,6 @@
        package documentation for more information.
   -->
   <node pkg="nodelet" type="nodelet" name="visp_tracker_viewer"
-        args="load visp_tracker/TrackerViewer $(arg manager)">
+        args="load visp_tracker/TrackerViewer $(arg manager)" output="screen">
       </node>
 </launch>

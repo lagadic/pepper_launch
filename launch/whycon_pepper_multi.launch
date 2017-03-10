@@ -7,8 +7,8 @@
     <param name="targets" value="4"/> 
     <param name="max_refine" value="5"/>
     <param name="max_attempts" value="5"/>
-    <param name="outer_diameter" value="0.0115"/>
-    <param name="inner_diameter" value="0.005"/>
+    <param name="outer_diameter" value="0.01273"/>
+    <param name="inner_diameter" value="0.00522"/>
     <param name="camera_link_name" value="CameraBottom_optical_frame"/>
 
     <!-- uncomment when already performed 3D->2D calibration -->
