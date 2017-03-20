@@ -1,6 +1,6 @@
 <launch>
 
-  <arg name="nao_ip"              default="$(optenv PEPPER_IP 127.0.0.1)" />
+  <arg name="nao_ip"              default="$(optenv PEPPER_IP_WIFI 127.0.0.1)" />
   <arg name="nao_port"            default="$(optenv NAO_PORT 9559)" />
 
   <arg name="roscore_ip"          default="131.254.13.112" />
@@ -21,5 +21,11 @@
     <arg name="nao_ip"            value="$(arg nao_ip)" />
     <arg name="nao_port"          value="$(arg nao_port)" />
   </include> -->
+
+  <!-- launch perception -->
+  <include file="$(find pepper_bringup)/launch/perception.launch.xml">
+    <arg name="namespace"         value="$(arg namespace)" />
+  </include>
+
 
 </launch>
