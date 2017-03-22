@@ -1,0 +1,24 @@
+<launch>
+
+<!-- Launch whycon -->
+   <node name="whycon" type="whycon" pkg="whycon"  output="screen">
+    <param name="targets" value="4"/> 
+    <param name="max_refine" value="5"/>
+    <param name="max_attempts" value="5"/>
+    <param name="outer_diameter" value="0.01273"/>
+    <param name="inner_diameter" value="0.00522"/>
+    <param name="camera_link_name" value="CameraBottom_optical_frame"/>
+    <remap from="/camera/image_rect_color" to="/pepper_robot/camera/bottom/image_rect_color" />
+    <remap from="/camera/camera_info" to="/pepper_robot/camera/bottom/camera_info" />
+
+  </node>
+
+
+<!-- Launch node to estimate the right hand pose -->
+<node name="pepper_hand_pose" pkg="pepper_hand_pose" type="pepper_hand_pose_node" output="screen">
+  <param name="robotIp" value="$(optenv PEPPER_IP_WIFI 131.254.10.126)" />
+  <param name="numPoints" value="4" />
+    <remap from="/camera/camera_info" to="/pepper_robot/camera/bottom/camera_info" />
+</node>
+
+</launch>
