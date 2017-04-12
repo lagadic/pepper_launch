@@ -1,5 +1,7 @@
 <launch>
 
+<include file="$(find pepper_launch)/launch/pepper_full_wifi.launch"/>
+
 <!-- Launch whycon -->
    <node name="whycon" type="whycon" pkg="whycon"  output="screen">
     <param name="targets" value="4"/> 
@@ -14,11 +16,11 @@
   </node>
 
 
-<!-- Launch node to estimate the right hand pose -->
+<!-- Launch node to estimate the right hand pose  launch-prefix="gdb -ex run - - args" -->
 <node name="pepper_hand_pose" pkg="pepper_hand_pose" type="pepper_hand_pose_node" output="screen">
   <param name="robotIp" value="$(optenv PEPPER_IP_WIFI 131.254.10.126)" />
   <param name="numPoints" value="4" />
-    <remap from="/camera/camera_info" to="/pepper_robot/camera/bottom/camera_info" />
+  <remap from="/camera/camera_info" to="/pepper_robot/camera/bottom/camera_info" />
 </node>
 
 </launch>

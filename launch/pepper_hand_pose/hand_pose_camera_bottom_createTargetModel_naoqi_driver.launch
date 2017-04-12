@@ -1,0 +1,14 @@
+<launch>
+
+<!-- Launch naoqi_driver and whycon -->
+<include file="$(find pepper_launch)/launch/pepper_hand_pose/whycon_hand_pepper.launch"/>
+
+<!-- Launch node to create the Target Model -->
+<node name="pepper_hand_pose" pkg="pepper_hand_pose" type="pepper_hand_pose_node" output="screen">
+  <param name="numPoints" value="4" />
+  <param name="robotIp" value="$(optenv PEPPER_IP_WIFI 131.254.10.126)" />
+  <param name="createTargetModel" value="true" />
+  <remap from="/camera/camera_info" to="/pepper_robot/camera/bottom/camera_info" />
+</node>
+
+</launch>
